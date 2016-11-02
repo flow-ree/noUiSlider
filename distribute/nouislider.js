@@ -1,4 +1,4 @@
-/*! nouislider - 8.5.1 - 2016-04-24 16:00:29 */
+/*! nouislider-algolia-fork - 10.0.0 - 2016-11-02 18:17:49 */
 
 (function (factory) {
 
@@ -855,6 +855,14 @@ function closure ( target, options, originalOptions ){
 		}
 
 		if ( touch ) {
+			// backported from https://github.com/leongersen/noUiSlider/pull/649/commits/2ecb5e138e7743049bdea5e86286db6e3815d8d6
+			// Fix bug when user touches with two or more fingers on mobile devices.
+			// It's usefull when you have two or more sliders on one page,
+			// that can be touched simultaneously.
+			if (e.touches.length > 1) {
+				return false;
+			}
+
 			// noUiSlider supports one movement at a time,
 			// so we can select the first 'changedTouch'.
 			x = e.changedTouches[0].pageX;

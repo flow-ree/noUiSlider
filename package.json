@@ -1,6 +1,6 @@
 {
-  "name": "nouislider",
-  "version": "8.5.1",
+  "name": "nouislider-algolia-fork",
+  "version": "10.0.0",
   "main": "distribute/nouislider",
   "style": "distribute/nouislider.min.css",
   "license": "WTFPL",
