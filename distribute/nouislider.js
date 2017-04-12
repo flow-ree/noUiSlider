@@ -1367,7 +1367,12 @@ function closure ( target, options, originalOptions ){
 		}
 
 		var handles = data.handles || scope_Handles, positions, state = false,
-			proposal = ((data.start - event.calcPoint) * 100) / data.baseSize,
+
+    //normal
+    proposal = ((event.calcPoint - data.start) * 100) / data.baseSize,
+
+    //  rotated 180 degrees
+    // proposal = ((data.start - event.calcPoint) * 100) / data.baseSize,
 			handleNumber = handles[0] === scope_Handles[0] ? 0 : 1, i;
 
 		// Calculate relative positions for the handles.
